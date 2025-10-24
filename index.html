@@ -16,9 +16,9 @@
             --text: #2b2d42;
             --text-light: #8d99ae;
             --bg: #ffffff;
-            --bg-secondary: #f8f9fa;
+            --bg-secondary: #e0e0e0;
             --card-bg: #ffffff;
-            --border: #e9ecef;
+            --border: #dfdfdf;
             --shadow: 0 8px 30px rgba(0,0,0,0.08);
             --gradient: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
             --radius: 16px;
@@ -102,6 +102,11 @@
             text-align: center;
             z-index: 2;
             position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
         }
 
         .logo {
@@ -112,6 +117,7 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             opacity: 0.9;
+            text-align: center;
         }
 
         .main-title {
@@ -121,6 +127,7 @@
             margin-bottom: 1.5rem;
             line-height: 1.1;
             text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            text-align: center;
         }
 
         .main-subtitle {
@@ -129,6 +136,7 @@
             margin-bottom: 3rem;
             font-weight: 300;
             max-width: 600px;
+            text-align: center;
         }
 
         .main-card {
@@ -140,12 +148,17 @@
             border: 1px solid rgba(255,255,255,0.2);
             width: 90%;
             max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .main-buttons {
             display: flex;
             flex-direction: column;
             gap: 1.2rem;
+            width: 100%;
+            align-items: center;
         }
 
         .btn {
@@ -163,6 +176,8 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+            width: 100%;
+            max-width: 300px;
         }
 
         .btn:hover {
@@ -231,12 +246,14 @@
             flex: 1;
             max-width: 500px;
             margin: 0 2rem;
+            justify-content: center;
         }
 
         .search-container {
             display: flex;
             width: 100%;
             position: relative;
+            justify-content: center;
         }
 
         .search-input {
@@ -248,6 +265,7 @@
             color: var(--text);
             font-size: 1rem;
             transition: var(--transition);
+            max-width: 400px;
         }
 
         .search-input:focus {
@@ -258,7 +276,7 @@
 
         .search-icon {
             position: absolute;
-            left: 1.2rem;
+            left: 2.6rem;
             top: 50%;
             transform: translateY(-50%);
             color: var(--text-light);
@@ -285,21 +303,28 @@
         /* Контент страниц */
         .page-content {
             padding: 3rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .page-header {
             text-align: center;
             margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .page-title {
-            font-size: 3rem;
+            font-size: 5rem;
             font-weight: 800;
             margin-bottom: 1rem;
-            background: var(--gradient);
+            background: var(--primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
         }
 
         .page-subtitle {
@@ -307,6 +332,7 @@
             color: var(--text-light);
             max-width: 600px;
             margin: 0 auto;
+            text-align: center;
         }
 
         /* Карточки товаров - УВЕЛИЧЕНА ВЫСОТА В 1.5 РАЗА */
@@ -314,20 +340,23 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
+            justify-items: center;
         }
 
         /* Мобильные: 1 карточка в ряд */
         @media (max-width: 768px) {
             .card {
-                min-height: 720px; /* УВЕЛИЧЕНО С 550px */
+                min-height: 720px;
+                width: 100%;
+                max-width: 500px;
             }
             
             .card-image {
-                height: 375px; /* УВЕЛИЧЕНО С 250px */
+                height: 375px;
             }
             
             .card-content {
-                padding: 2.5rem; /* УВЕЛИЧЕНО С 2rem */
+                padding: 2.5rem;
             }
         }
 
@@ -338,15 +367,17 @@
             }
             
             .card {
-                min-height: 975px; /* УВЕЛИЧЕНО С 650px */
+                min-height: 975px;
+                width: 100%;
+                max-width: 600px;
             }
             
             .card-image {
-                height: 480px; /* УВЕЛИЧЕНО С 320px */
+                height: 480px;
             }
             
             .card-content {
-                padding: 3.5rem; /* УВЕЛИЧЕНО С 2.5rem */
+                padding: 3.5rem;
             }
         }
 
@@ -357,11 +388,13 @@
             }
             
             .card {
-                min-height: 1020px; /* УВЕЛИЧЕНО С 680px */
+                min-height: 1020px;
+                width: 100%;
+                max-width: 650px;
             }
             
             .card-image {
-                height: 525px; /* УВЕЛИЧЕНО С 350px */
+                height: 525px;
             }
         }
 
@@ -373,9 +406,11 @@
             transition: var(--transition);
             border: 1px solid var(--border);
             position: relative;
-            min-height: 1025px; /* БАЗОВАЯ ВЫСОТА УВЕЛИЧЕНА С 550px */
+            min-height: 1025px;
             display: flex;
             flex-direction: column;
+            width: 100%;
+            max-width: 500px;
         }
 
         .card:hover {
@@ -398,7 +433,7 @@
 
         .card-image {
             width: 100%;
-            height: 575px; /* БАЗОВАЯ ВЫСОТА УВЕЛИЧЕНА С 250px */
+            height: 575px;
             object-fit: cover;
             transition: var(--transition);
         }
@@ -408,18 +443,22 @@
         }
 
         .card-content {
-            padding: 3rem; /* БАЗОВЫЙ PADDING УВЕЛИЧЕН С 2rem */
+            padding: 3rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            align-items: center;
+            text-align: center;
         }
 
         .card-title {
-            font-size: 2rem; /* УВЕЛИЧЕН ШРИФТ С 1.6rem */
+            font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.8rem; /* УВЕЛИЧЕН ОТСТУП С 1.2rem */
+            margin-bottom: 1.8rem;
             color: var(--text);
             line-height: 1.3;
+            text-align: center;
+            width: 100%;
         }
 
         .card-description {
@@ -435,13 +474,18 @@
             text-overflow: ellipsis;
             line-clamp: 6;
             box-orient: vertical;
+            text-align: center;
+            width: 100%;
         }
+
         .card-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2.5rem; /* УВЕЛИЧЕН ОТСТУП С 1.8rem */
-            font-size: 1.2rem; /* УВЕЛИЧЕН ШРИФТ С 1rem */
+            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            width: 100%;
+            gap: 1rem;
         }
 
         .card-id {
@@ -449,7 +493,9 @@
             background: var(--bg-secondary);
             padding: 0.5rem 1.2rem;
             border-radius: 20px;
-            font-size: 1.1rem; /* УВЕЛИЧЕН ШРИФТ С 0.9rem */
+            font-size: 1.1rem;
+            text-align: center;
+            flex: 1;
         }
 
         .card-user {
@@ -457,8 +503,11 @@
             font-weight: 600;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 0.5rem;
-            font-size: 1.2rem; /* УВЕЛИЧЕН ШРИФТ С 1rem */
+            font-size: 1.2rem;
+            text-align: center;
+            flex: 1;
         }
 
         .order-btn {
@@ -467,7 +516,7 @@
             justify-content: center;
             gap: 0.8rem;
             width: 100%;
-            padding: 1.3rem; /* УВЕЛИЧЕН PADDING С 1.3rem */
+            padding: 1.3rem;
             background: var(--gradient);
             color: white;
             border: none;
@@ -476,7 +525,8 @@
             cursor: pointer;
             transition: var(--transition);
             text-decoration: none;
-            font-size: 1.4rem; /* УВЕЛИЧЕН ШРИФТ С 1.15rem */
+            font-size: 1.4rem;
+            text-align: center;
         }
 
         .order-btn:hover {
@@ -537,6 +587,8 @@
             font-size: 1.5rem;
             font-weight: 700;
             color: var(--text);
+            text-align: center;
+            flex: 1;
         }
 
         .close-sidebar {
@@ -546,6 +598,9 @@
             color: var(--text-light);
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .close-sidebar:hover {
@@ -571,8 +626,10 @@
             transition: var(--transition);
             display: flex;
             align-items: center;
+            justify-content: flex-start;
             gap: 1rem;
             text-align: left;
+            width: 100%;
         }
 
         .sidebar-btn:hover {
@@ -591,12 +648,16 @@
             padding: 1.5rem;
             border-radius: var(--radius);
             margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .theme-toggle {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            width: 100%;
         }
 
         .theme-text {
@@ -682,6 +743,9 @@
             transform: scale(0.9);
             transition: transform 0.3s;
             border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .modal.active .modal-content {
@@ -693,15 +757,18 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 2rem;
+            width: 100%;
         }
 
         .modal-title {
             font-size: 1.8rem;
             font-weight: 700;
-            background: var(--gradient);
+            background: var(--primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            text-align: center;
+            flex: 1;
         }
 
         .close-modal {
@@ -711,6 +778,9 @@
             color: var(--text-light);
             cursor: pointer;
             transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .close-modal:hover {
@@ -720,6 +790,10 @@
 
         .form-group {
             margin-bottom: 1.5rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .form-label {
@@ -727,6 +801,8 @@
             margin-bottom: 0.5rem;
             font-weight: 600;
             color: var(--text);
+            text-align: center;
+            width: 100%;
         }
 
         .form-input, .form-textarea, .form-select {
@@ -738,6 +814,7 @@
             color: var(--text);
             font-size: 1rem;
             transition: var(--transition);
+            max-width: 500px;
         }
 
         .form-input:focus, .form-textarea:focus, .form-select:focus {
@@ -760,6 +837,12 @@
             cursor: pointer;
             transition: var(--transition);
             background: var(--bg-secondary);
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
 
         .drag-drop-area:hover, .drag-drop-area.active {
@@ -770,12 +853,16 @@
         .drag-drop-text {
             color: var(--text-light);
             margin-bottom: 1rem;
+            text-align: center;
         }
 
         .drag-drop-icon {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         /* Кнопки действий в админке */
@@ -783,6 +870,8 @@
             display: flex;
             gap: 0.8rem;
             margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
         }
 
         .edit-btn {
@@ -794,6 +883,11 @@
             cursor: pointer;
             transition: var(--transition);
             flex: 1;
+            max-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .edit-btn:hover {
@@ -810,6 +904,11 @@
             cursor: pointer;
             transition: var(--transition);
             flex: 1;
+            max-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
         .delete-btn:hover {
@@ -826,12 +925,14 @@
             .nav-content {
                 flex-wrap: wrap;
                 gap: 1rem;
+                justify-content: center;
             }
             
             .search-section {
                 order: 3;
                 margin: 1rem 0 0;
                 max-width: 100%;
+                justify-content: center;
             }
             
             .cards-container {
@@ -845,6 +946,11 @@
             
             .page-title {
                 font-size: 2.5rem;
+            }
+
+            .brand {
+                justify-content: center;
+                width: 100%;
             }
         }
 
@@ -868,6 +974,36 @@
 
         .hidden {
             display: none !important;
+        }
+
+        /* Центрирование для developer tabs */
+        .developer-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .search-id-container {
+            display: flex;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .dev-content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #dev-products-list, #dev-services-list, #dev-vacancies-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
     </style>
 </head>
@@ -1051,7 +1187,7 @@
             <div id="login-section">
                 <div class="form-group">
                     <label class="form-label">Пароль для доступа</label>
-                    <input type="password" id="dev-password" class="form-input" placeholder="Введите пароль разработчика" onkeypress="handleEnterKey(event, checkDevPassword)">
+                    <input type="password" id="dev-password" class="form-input" placeholder="Введите пароль" onkeypress="handleEnterKey(event, checkDevPassword)">
                     <button class="btn" style="margin-top: 15px; background: var(--gradient);" onclick="checkDevPassword()">
                         <i class="fas fa-sign-in-alt"></i>
                         Войти в панель
@@ -1060,7 +1196,7 @@
             </div>
             
             <div id="dev-panel" class="hidden">
-                <h3 style="margin-bottom: 1.5rem; color: var(--text);">Добавить новое объявление</h3>
+                <h3 style="margin-bottom: 1.5rem; color: var(--text); text-align: center; width: 100%;">Добавить новое объявление</h3>
                 
                 <div class="form-group">
                     <label class="form-label">Название объявления</label>
@@ -1093,7 +1229,7 @@
                         <div class="drag-drop-text">Перетащите изображение сюда или кликните для выбора</div>
                     </div>
                     <input type="file" id="image-upload" accept="image/*" style="display: none;" onchange="handleImageSelect(event)">
-                    <div id="image-preview" style="margin-top: 1rem;"></div>
+                    <div id="image-preview" style="margin-top: 1rem; display: flex; justify-content: center; width: 100%;"></div>
                 </div>
                 
                 <div class="form-group">
@@ -1111,10 +1247,10 @@
                     Добавить объявление
                 </button>
                 
-                <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border);">
-                    <h3 style="margin-bottom: 1rem; color: var(--text);">Управление объявлениями</h3>
+                <div style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 2px solid var(--border); width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <h3 style="margin-bottom: 1rem; color: var(--text); text-align: center;">Управление объявлениями</h3>
                     
-                    <div class="developer-tabs" style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <div class="developer-tabs">
                         <button class="sidebar-btn active" onclick="switchDevTab('products', event)" style="flex: 1; text-align: center;">
                             Товары
                         </button>
@@ -1126,25 +1262,25 @@
                         </button>
                     </div>
                     
-                    <div class="search-id-container" style="display: flex; margin-bottom: 1.5rem;">
-                        <input type="text" id="search-id-input" class="form-input" placeholder="Поиск по ID объявления" style="border-radius: 12px 0 0 12px;" onkeypress="handleEnterKey(event, searchById)">
+                    <div class="search-id-container">
+                        <input type="text" id="search-id-input" class="form-input" placeholder="Поиск по ID объявления" style="border-radius: 12px 0 0 12px; max-width: 300px;" onkeypress="handleEnterKey(event, searchById)">
                         <button class="order-btn" onclick="searchById()" style="border-radius: 0 12px 12px 0; width: auto; padding: 0 1.5rem;">
                             Найти
                         </button>
                     </div>
                     
                     <div id="dev-products" class="dev-content active">
-                        <h4 style="margin-bottom: 1rem; color: var(--text);">Товары</h4>
+                        <h4 style="margin-bottom: 1rem; color: var(--text); text-align: center;">Товары</h4>
                         <div id="dev-products-list"></div>
                     </div>
                     
                     <div id="dev-services" class="dev-content">
-                        <h4 style="margin-bottom: 1rem; color: var(--text);">Услуги</h4>
+                        <h4 style="margin-bottom: 1rem; color: var(--text); text-align: center;">Услуги</h4>
                         <div id="dev-services-list"></div>
                     </div>
                     
                     <div id="dev-vacancies" class="dev-content">
-                        <h4 style="margin-bottom: 1rem; color: var(--text);">Вакансии</h4>
+                        <h4 style="margin-bottom: 1rem; color: var(--text); text-align: center;">Вакансии</h4>
                         <div id="dev-vacancies-list"></div>
                     </div>
                 </div>
@@ -1162,7 +1298,7 @@
                 </button>
             </div>
             
-            <div id="edit-form">
+            <div id="edit-form" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
                 <div class="form-group">
                     <label class="form-label">Название объявления</label>
                     <input type="text" id="edit-title" class="form-input" placeholder="Введите заголовок" onkeypress="handleEnterKey(event, saveEditedItem)">
@@ -1194,7 +1330,7 @@
                         <div class="drag-drop-text">Перетащите новое изображение сюда или кликните для выбора</div>
                     </div>
                     <input type="file" id="edit-image-upload" accept="image/*" style="display: none;" onchange="handleEditImageSelect(event)">
-                    <div id="edit-image-preview" style="margin-top: 1rem;"></div>
+                    <div id="edit-image-preview" style="margin-top: 1rem; display: flex; justify-content: center; width: 100%;"></div>
                 </div>
                 
                 <div class="form-group">
@@ -1647,6 +1783,8 @@
                 const itemElement = document.createElement('div');
                 itemElement.className = 'card';
                 itemElement.style.marginBottom = '15px';
+                itemElement.style.width = '100%';
+                itemElement.style.maxWidth = '500px';
                 itemElement.innerHTML = `
                     <div class="card-content">
                         <h3 class="card-title">${item.title}</h3>
